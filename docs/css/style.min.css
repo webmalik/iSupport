@@ -3334,3 +3334,108 @@ body::after {
     padding: 1.125rem 1.5rem;
   }
 }
+.model .hero__image {
+  text-align: center;
+}
+.model .hero__image img {
+  max-width: 22.16019rem !important;
+  height: auto;
+  margin-top: 1.19rem;
+}
+
+.prices__title {
+  margin-bottom: 1.5rem;
+}
+.prices__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 1.25rem;
+}
+.prices__item {
+  display: flex;
+  padding: 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.125rem;
+  flex: 1 0 0;
+  border-radius: 1.125rem;
+  border: 2px solid var(--Light-Blue, #a9cef4);
+  background: var(--White, #fff);
+}
+.prices__header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: var(--Black, #000);
+  font-family: "Kanit";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 1.5rem */
+}
+@media (max-width: 1200px) {
+  .prices__header {
+    font-size: calc(18px + 2 * ((100vw - 360px) / 840));
+  }
+}
+.prices__text {
+  color: var(--Black, #000);
+  font-family: "Kanit";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 1.2rem */
+}
+@media (max-width: 1200px) {
+  .prices__text {
+    font-size: calc(14px + 2 * ((100vw - 360px) / 840));
+  }
+}
+.prices__time {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--Black, #000);
+  /* Text/16 Regular */
+  font-family: "Kanit";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 1.2rem */
+}
+@media (max-width: 1200px) {
+  .prices__time {
+    font-size: calc(14px + 2 * ((100vw - 360px) / 840));
+  }
+}
+
+.prices__warning {
+  display: flex;
+  border-radius: 1.125rem;
+  background: var(--Transparent-Pink, rgba(203, 16, 191, 0.15));
+  display: flex;
+  padding: 1.5rem;
+  align-items: center;
+  gap: 1.125rem;
+  align-self: stretch;
+  margin-top: 24px;
+}
+@media (max-width: 1200px) {
+  .prices__warning {
+    margin-top: calc(17.92px + 6.08 * ((100vw - 360px) / 840));
+  }
+}
+
+@media (max-width: 992px) {
+  .prices__title {
+    font-size: 1.125rem;
+    text-align: center;
+  }
+  .prices__warning {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .prices__wrapper {
+    grid-template-columns: 1fr;
+  }
+}

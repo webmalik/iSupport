@@ -1,0 +1,12 @@
+.model {
+	.hero {
+		&__image {
+			text-align: center;
+			img {
+				max-width: 22.16019rem !important;
+				height: auto;
+				margin-top: 1.19rem;
+			}
+		}
+	}
+}
