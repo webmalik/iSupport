@@ -1,0 +1,13 @@
+{
+	"projectName": "iSupport",
+	"menuItems": [
+		{
+			"label": "Стартова сторінка",
+			"url": "/"
+		},
+		{
+			"label": "Головна сторінка",
+			"url": "/main.html"
+		}
+	]
+}

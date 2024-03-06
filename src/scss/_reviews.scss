@@ -1,0 +1,39 @@
+.reviews {
+	&__title {
+		max-width: 19.375rem;
+	}
+
+	&__content {
+		@include adaptiv-value("margin-top", toPX(2.94), toPX(0.5), 1);
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		@include adaptiv-value("gap", toPX(1.25), toPX(0.69), 1);
+		gap: 1.25rem;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		width: 17.8125rem;
+		height: 12.1875rem;
+		flex-shrink: 0;
+		border-radius: 1.125rem;
+		border: 1px solid #cfcfcf;
+	}
+}
+
+@include media-width($md) {
+	.reviews {
+		&__item {
+			width: 9.9025rem;
+			height: 9.30819rem;
+			flex-shrink: 0;
+			border-radius: 1.125rem;
+			border: 1px solid #cfcfcf;
+		}
+	}
+}

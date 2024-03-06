@@ -1,0 +1,166 @@
+.hero {
+	position: relative;
+
+	&__wrapper {
+		display: flex;
+	}
+
+	&__content {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		@include adaptiv-value("gap", toPX(1.12), toPX(0.75), 1);
+		justify-content: flex-start;
+		@include adaptiv-value("margin-top", toPX(6.13), toPX(1.44), 1);
+	}
+
+	&__title {
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	&__label {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+
+		img {
+			max-width: 1.5rem;
+			max-height: 1.5rem;
+		}
+	}
+
+	&__button {
+		@include adaptiv-value("margin-top", toPX(1), toPX(0.37), 1);
+	}
+
+	&__image {
+		width: 100%;
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 43.875rem;
+			height: 28.25rem;
+			flex-shrink: 0;
+			border-radius: 14.125rem;
+			background: $blueGardient;
+			z-index: -1;
+			top: 1.81rem;
+			right: -1.75rem;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			width: 3.75rem;
+			height: 3.75rem;
+			flex-shrink: 0;
+			border-radius: 8.34375rem;
+			background: $blueGardient;
+			top: 1.06rem;
+			right: -5.75rem;
+			z-index: -1;
+		}
+
+		img {
+			margin-top: 4.12rem + 1.81rem;
+		}
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		@include adaptiv-value("width", toPX(20.5), toPX(19.3125), 1);
+		@include adaptiv-value("height", toPX(14.8125), toPX(12.1875), 1);
+		flex-shrink: 0;
+		border-radius: 0rem 8.34375rem 8.34375rem 0rem;
+		background: $blueGardient;
+		z-index: -1;
+		@include adaptiv-value("bottom", toPX(-2.2525), toPX(0), 1);
+		@include adaptiv-value("left", toPX(0), toPX(-9.13), 1);
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		@include adaptiv-value("width", toPX(10.4375), toPX(6), 1);
+		@include adaptiv-value("height", toPX(10.4375), toPX(6), 1);
+		flex-shrink: 0;
+		border-radius: 8.34375rem;
+		background: $blueGardient;
+		z-index: -1;
+		@include adaptiv-value("bottom", toPX(-2.2475), toPX(0), 1);
+		@include adaptiv-value("right", toPX(4), toPX(-1.5), 1);
+	}
+}
+
+@include media-width(1390px) {
+	.hero {
+		&__image {
+			&::after {
+				right: 0;
+			}
+		}
+	}
+}
+
+@include media-width($md) {
+	.hero {
+		overflow: hidden;
+		&__image {
+			&::before {
+				display: none;
+			}
+			&::after {
+				top: 4.94rem;
+				right: auto;
+				left: -1.5rem;
+				z-index: -1;
+			}
+
+			img {
+				margin-top: 0;
+				margin-bottom: -5rem;
+			}
+		}
+	}
+}
+
+@include media-width($sm) {
+	.hero {
+		overflow: hidden;
+		&__wrapper {
+			flex-direction: column;
+			gap: 2.13rem;
+		}
+		&__content {
+			position: relative;
+			&::before {
+				content: "";
+				position: absolute;
+				width: 16.1875rem;
+				height: 15.5625rem;
+				flex-shrink: 0;
+				border-radius: 14.125rem;
+				background: $blueGardient;
+				z-index: -1;
+				top: 4.19rem;
+				right: -9.13rem;
+			}
+		}
+		&__image {
+			img {
+				width: 27rem;
+			}
+			&::before {
+				display: none;
+			}
+		}
+	}
+}

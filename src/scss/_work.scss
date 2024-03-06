@@ -1,0 +1,116 @@
+.work {
+	&__wrapper {
+		display: flex;
+		gap: 1rem;
+		max-height: 38.875rem;
+	}
+
+	&__info {
+		display: flex;
+		padding: 0rem 2.75rem;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 1.5rem;
+		border-radius: 2rem;
+		background: var(--Transparent-Pink, rgba(203, 16, 191, 0.15));
+		width: 100%;
+	}
+
+	&__title {
+	}
+
+	&__steps {
+		margin-left: 0.84rem;
+		border-left: 0.125rem solid #cb10bf;
+		position: relative;
+		ol {
+			list-style-type: none;
+			counter-reset: item;
+			margin-left: 20px;
+			display: flex;
+			flex-direction: column;
+			gap: 0.25rem;
+			li {
+				@include adaptiv-value("padding-left", toPX(3.44), toPX(2.06), 1);
+				counter-increment: item;
+				margin-bottom: 5px;
+				min-height: 7.3125rem;
+
+				&:last-child {
+					min-height: 4.875rem;
+
+					&::before {
+						@include adaptiv-value("min-height", toPX(5.2), toPX(5.8), 1);
+					}
+				}
+
+				&::before {
+					content: counter(item, decimal-leading-zero);
+					position: absolute;
+					color: var(--Accent, #cb10bf);
+					font-family: $font-family;
+					font-size: 1.875rem;
+					font-style: normal;
+					font-weight: 500;
+					line-height: normal;
+					left: -0.84rem;
+					background-color: #f7dbf5;
+				}
+				p {
+					color: #000;
+					font-family: $font-family;
+					@include adaptiv-value("font-size", toPX(1.5), toPX(1.125), 1);
+					font-style: normal;
+					font-weight: 500;
+					line-height: normal;
+				}
+
+				span {
+					color: #000;
+					font-family: $font-family;
+					@include adaptiv-value("font-size", toPX(1), toPX(0.875), 1);
+					font-style: normal;
+					font-weight: 400;
+					line-height: 120%;
+				}
+			}
+		}
+	}
+
+	&__images {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		width: 100%;
+	}
+
+	&__img {
+		border-radius: 2.125rem;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+@include media-width($md) {
+	.work {
+		&__wrapper {
+			flex-direction: column;
+			max-height: none;
+		}
+
+		&__info {
+			padding: 1.75rem 1rem;
+		}
+
+		&__images {
+			flex-direction: row;
+		}
+
+		&__img {
+			width: 100%;
+		}
+	}
+}

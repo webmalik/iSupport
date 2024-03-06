@@ -1,0 +1,41 @@
+.seo {
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		@include adaptiv-value("gap", toPX(0.75), toPX(0.25), 1);
+		h5 {
+			color: #000;
+			font-family: $font-family;
+			font-size: 1.125rem;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 120%;
+		}
+
+		p {
+			color: #000;
+			font-family: $font-family;
+			@include adaptiv-value("font-size", toPX(1), toPX(0.875), 1);
+			font-style: normal;
+			font-weight: 400;
+			line-height: 120%; /* 1.05rem */
+		}
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		overflow: hidden;
+		transition: all 0.5s ease-in-out;
+	}
+
+	&__link {
+		color: #000;
+		font-family: $font-family;
+		font-size: 1.125rem;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 120%; /* 1.35rem */
+	}
+}

@@ -1,0 +1,9 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="calendar">
+<path id="Vector" d="M8 2V5" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M16 2V5" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M20.75 17.6001H3.25" stroke="#CB10BF" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M16 3.5C19.33 3.68 21 4.95 21 9.65V15.83C21 19.95 20 22.01 15 22.01H9C4 22.01 3 19.95 3 15.83V9.65C3 4.95 4.67 3.69 8 3.5H16Z" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="7" d="M10.48 15.01C10.2866 14.8967 10.19 14.7433 10.19 14.55C10.19 14.4367 10.23 14.31 10.31 14.17L13.33 9.03H9.82995C9.64328 9.03 9.48995 8.98667 9.36995 8.9C9.25662 8.81333 9.19995 8.68667 9.19995 8.52C9.19995 8.34667 9.25662 8.21667 9.36995 8.13C9.48328 8.04333 9.63662 8 9.82995 8H14.14C14.3466 8 14.5133 8.05 14.64 8.15C14.7666 8.25 14.83 8.39 14.83 8.57C14.83 8.72333 14.78 8.89 14.68 9.07L11.4 14.78C11.34 14.88 11.26 14.96 11.16 15.02C11.06 15.08 10.95 15.11 10.83 15.11C10.71 15.11 10.5933 15.0767 10.48 15.01Z" fill="#CB10BF"/>
+</g>
+</svg>

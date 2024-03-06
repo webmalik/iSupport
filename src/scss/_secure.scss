@@ -1,0 +1,24 @@
+.secure {
+	&__wrapper {
+		display: flex;
+		background-image: url("../img/secure_bg.png");
+		background-repeat: no-repeat;
+	}
+
+	&__content {
+		max-width: 50%;
+	}
+
+	&__img {
+		max-width: 21.44575rem;
+	}
+
+	&__title {
+	}
+
+	&__text {
+	}
+
+	&__button {
+	}
+}

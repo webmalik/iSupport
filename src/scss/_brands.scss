@@ -1,0 +1,125 @@
+.brands {
+	background: #f5f5f5;
+	@include adaptiv-value("padding-top", toPX(2.56), toPX(1.5), 1);
+	@include adaptiv-value("padding-bottom", toPX(4.75), toPX(1.5), 1);
+	&__title {
+		max-width: 13.25rem;
+	}
+
+	&__inner {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+
+	&__tabs {
+		display: flex;
+		flex-direction: column;
+		gap: 1.12rem;
+		width: 100%;
+		max-width: 58.5rem;
+		border-radius: 2.125rem;
+		background: var(--White, #fff);
+		box-shadow: 0px 2px 16px 0px rgba(141, 141, 141, 0.25);
+		padding: 1.5rem;
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-radius: 1.125rem;
+		border: 1px solid #a7cdf4;
+		padding: 0.5rem;
+	}
+
+	&__button {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		padding: 1.5rem 0;
+		background: transparent;
+		transition: background 0.5s ease-in-out;
+		border-radius: 0.75rem;
+
+		color: var(--Black, #000);
+		font-family: $font-family;
+		@include adaptiv-value("font-size", toPX(1), toPX(0.875), 1);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%; /* 1.05rem */
+		cursor: pointer;
+
+		img {
+			width: 2rem;
+			height: 2rem;
+		}
+
+		&.active {
+			background: linear-gradient(95deg, #87bcf2 2.32%, #a9cef4 95.93%);
+		}
+	}
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		gap: 1.12rem;
+		align-self: start;
+		width: 100%;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0.75rem 1.125rem 1rem 1.125rem;
+	}
+
+	&__logo {
+		width: 5rem;
+		height: 5rem;
+	}
+
+	&__name {
+		color: #000;
+		text-align: center;
+		font-family: $font-family;
+		@include adaptiv-value("font-size", toPX(1), toPX(0.875), 1);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%;
+	}
+}
+
+@include media-width($md) {
+	.brands {
+		&__title {
+			max-width: none;
+		}
+		&__inner {
+			flex-direction: column;
+			gap: 1.12rem;
+		}
+
+		&__tabs {
+			padding: 1rem;
+		}
+
+		&__button {
+			flex-direction: column;
+		}
+	}
+}
+
+@include media-width(450px) {
+	.brands {
+		&__item {
+			width: 100%;
+			max-width: calc(50% - 1.12rem);
+		}
+	}
+}
