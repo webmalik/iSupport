@@ -12,6 +12,10 @@
     {
       "label": "Контакти",
       "url": "/contacts.html"
+    },
+    {
+      "label": "Перегляд Бренду",
+      "url": "/brand.html"
     }
   ]
 }

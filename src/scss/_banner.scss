@@ -1,0 +1,55 @@
+.banner {
+	position: relative;
+	background: var(--blueGradient, linear-gradient(95deg, #87bcf2 2.32%, #a9cef4 95.93%));
+	&__wrapper {
+		display: flex;
+		padding: 4.375rem 0;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__title {
+		color: var(--White, #fff);
+		font-family: $font-family;
+		@include adaptiv-value("font-size", toPX(1.75), toPX(1.125), 1);
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		width: 100%;
+	}
+
+	&__button {
+		min-width: max-content;
+		padding: 1.5rem 3.75rem;
+	}
+
+	svg {
+		position: absolute;
+	}
+
+	.svg1 {
+		bottom: 0;
+	}
+	.svg2 {
+		right: 0;
+	}
+	.svg3 {
+		top: 0.63rem;
+		right: 5.62rem;
+	}
+}
+
+@include media-width($md) {
+	.banner {
+		&__wrapper {
+			flex-direction: column;
+			gap: 1.12rem;
+		}
+		&__title {
+			text-align: center;
+		}
+		&__button {
+			padding: 1.125rem 1.5rem;
+		}
+	}
+}

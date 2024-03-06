@@ -15,7 +15,13 @@
 		@include adaptiv-value("margin-top", toPX(6.13), toPX(1.44), 1);
 	}
 
-	&__title {
+	&__subtitle {
+		color: #000;
+		font-family: $font-family;
+		@include adaptiv-value("font-size", toPX(1.25), toPX(1.125), 1);
+		font-style: normal;
+		font-weight: 500;
+		line-height: 120%; /* 1.5rem */
 	}
 
 	&__inner {
