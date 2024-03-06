@@ -34,13 +34,15 @@
 			gap: 1.12rem;
 		}
 
+		select,
 		input:not([type="submit"]) {
 			position: relative;
 			display: flex;
-			padding: 1.5rem 3.25rem 1.5rem 5rem;
+			padding: 1.5rem 1.5rem 1.5rem 5rem;
 			align-items: center;
 			gap: 1rem;
 			border-radius: 2.5rem;
+			border: 1px solid var(--blueGradient, #87bcf2);
 			background: var(--White, #fff);
 			width: 100%;
 			font-family: $font-family;
@@ -56,6 +58,7 @@
 
 		.button {
 			width: 100%;
+			cursor: pointer;
 		}
 	}
 
@@ -87,6 +90,16 @@
 		&--tel {
 			&:before {
 				background-image: url("../img/call-calling.svg");
+			}
+		}
+		&--monitor {
+			&:before {
+				background-image: url("../img/monitor-mobbile.svg");
+			}
+		}
+		&--chat {
+			&:before {
+				background-image: url("../img/messages.svg");
 			}
 		}
 	}

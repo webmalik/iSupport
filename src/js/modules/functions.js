@@ -1,5 +1,3 @@
-import $ from "jquery";
-
 export function burgerMenu() {
 	const burgers = document.querySelectorAll('.header__burger');
 	const box = document.querySelector('.header__wrapper');
@@ -10,6 +8,16 @@ export function burgerMenu() {
 			box.classList.toggle('active');
 			body.classList.toggle('lock');
 		});
+	});
+
+	document.addEventListener('click', (event) => {
+		const isClickInsideMenu = box.contains(event.target);
+		const isClickInsideBurger = event.target.closest('.header__burger');
+
+		if (!isClickInsideMenu && !isClickInsideBurger) {
+			box.classList.remove('active');
+			body.classList.remove('lock');
+		}
 	});
 
 }
@@ -158,51 +166,49 @@ export function copy() {
 export function modal() {
 	const open = document.querySelectorAll('.open__modal');
 	const modal = document.querySelectorAll('.modal');
+	const body = document.body;
 	let dataModal, window;
 
-	if (modal) {
-		open.forEach(function (el) {
-			el.addEventListener('click', () => {
-				dataModal = el.getAttribute('data-modal');
+	open.forEach(function (el) {
+		el.addEventListener('click', () => {
+			dataModal = el.getAttribute('data-modal');
 
-				modal.forEach(function (mod) {
-					if (mod.classList.contains('active')) {
-						mod.classList.remove('active');
-					}
-				});
-
-				modal.forEach(function (mod) {
-					if (mod.getAttribute('data-modal') === dataModal) {
-						window = mod;
-						setTimeout(() => {
-							window.classList.remove('close__modal--animations');
-							window.classList.add('active');
-						}, 1200);
-
-					}
-				});
+			modal.forEach(function (mod) {
+				if (mod.classList.contains('active')) {
+					mod.classList.remove('active');
+					body.classList.remove('lock');
+				}
 			});
 
-			el.addEventListener('click', () => {
-				let close = window.querySelector('.modal__close');
-				let wrapper = window.querySelector('.modal__wrapper');
-				window.classList.remove('close__modal--animations');
-				window.classList.add('active');
-
-				window.addEventListener('click', (e) => {
-					if (e.target != wrapper && !wrapper.contains(e.target)) {
-						window.classList.add('close__modal--animations');
-						window.classList.remove('active');
-					}
-				});
-				close.addEventListener('click', () => {
-					window.classList.add('close__modal--animations');
-					window.classList.remove('active');
-				});
-
+			modal.forEach(function (mod) {
+				if (mod.getAttribute('data-modal') === dataModal) {
+					window = mod;
+					window.classList.add('active');
+					body.classList.add('lock');
+				}
 			});
 		});
-	}
+
+		el.addEventListener('click', () => {
+			let close = window.querySelector('.modal__close');
+			let wrapper = window.querySelector('.modal__wrapper');
+			window.classList.add('active');
+			body.classList.add('lock');
+
+			window.addEventListener('click', (e) => {
+				if (e.target != wrapper && !wrapper.contains(e.target)) {
+					window.classList.remove('active');
+					body.classList.remove('lock');
+				}
+			});
+			close.addEventListener('click', () => {
+				window.classList.remove('active');
+				body.classList.remove('lock');
+			});
+
+		});
+	});
+
 }
 
 export function sticky() {
@@ -274,7 +280,6 @@ export function readMore() {
 	buttons.forEach(function (button) {
 		let text = button.previousElementSibling;
 		let maxHeight = text.scrollHeight;
-		console.log(maxHeight);
 		text.style.maxHeight = minHeight;
 
 		button.addEventListener('click', (e) => {

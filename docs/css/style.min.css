@@ -770,75 +770,83 @@ body::after {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease-in-out;
+  opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 .modal .modal__container {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
   visibility: hidden;
   opacity: 0;
 }
 .modal.active {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
   background-color: rgba(43, 43, 43, 0.3);
   pointer-events: all;
   visibility: visible;
-  animation: modal 0.5s;
 }
 .modal.active .modal__close {
   visibility: visible;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
 }
 .modal.active .modal__container {
   visibility: visible;
   opacity: 1;
+  transition: all 0.3s ease-in-out;
 }
 .modal__wrapper {
   position: relative;
-  max-width: 542px;
+  max-width: 616px;
   width: 100%;
   border-radius: 0.625rem;
   background: var(--white, #fcfcfc);
   padding: 1.63rem;
   min-height: 10rem;
+  border-radius: 2.125rem;
+  box-shadow: 0px 2px 16px 0px rgba(141, 141, 141, 0.25);
 }
 @media (max-width: 1200px) {
   .modal__wrapper {
-    max-width: calc(320px + 222 * ((100vw - 360px) / 840));
+    max-width: calc(344px + 272 * ((100vw - 360px) / 840));
   }
 }
 .modal__close {
   visibility: hidden;
-  border-radius: 0.3rem;
-  border: 0.4px solid var(--grey-2, #8b8b8b);
   padding: 0.25rem;
   position: absolute;
-  top: 2.06rem;
-  right: 1.63rem;
+  top: 1.13rem;
+  right: 1.12rem;
+  padding: 0.5rem;
+  opacity: 1;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  border-radius: 0.75rem;
+}
+.modal__close:hover {
+  border-radius: 0.75rem;
+  background: var(--Transparent-Pink, rgb(203, 16, 191));
+  padding: 0.5rem;
 }
 .modal__close:hover svg {
-  animation: modal 0.5s;
   transition: all 0.3s ease-in-out;
 }
 .modal__close:hover svg path {
-  fill: #fcfcfc;
-}
-
-.close__modal--animations {
-  animation: modal_close 0.8s;
+  fill: #fff;
 }
 
 @media (max-width: 500px) {
   .modal__wrapper {
     max-width: 17.75rem;
   }
+  .modal__reviews {
+    max-width: 17.75rem !important;
+  }
 }
 @keyframes modal {
   0% {
     transform: scale(0.2);
-  }
-  50% {
-    transform: scale(1.5);
   }
   100% {
     transform: scale(1);
@@ -847,9 +855,6 @@ body::after {
 @keyframes modal_close {
   0% {
     transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
   }
   100% {
     transform: scale(0);
@@ -2702,13 +2707,15 @@ body::after {
   flex-direction: column;
   gap: 1.12rem;
 }
+.contacts__form select,
 .contacts__form input:not([type=submit]) {
   position: relative;
   display: flex;
-  padding: 1.5rem 3.25rem 1.5rem 5rem;
+  padding: 1.5rem 1.5rem 1.5rem 5rem;
   align-items: center;
   gap: 1rem;
   border-radius: 2.5rem;
+  border: 1px solid var(--blueGradient, #87bcf2);
   background: var(--White, #fff);
   width: 100%;
   font-family: "Kanit";
@@ -2718,15 +2725,18 @@ body::after {
   line-height: 100%;
 }
 @media (max-width: 1200px) {
+  .contacts__form select,
   .contacts__form input:not([type=submit]) {
     font-size: calc(14px + 2 * ((100vw - 360px) / 840));
   }
 }
+.contacts__form select::placeholder,
 .contacts__form input:not([type=submit])::placeholder {
   color: var(--Secondary, #b4b4b4);
 }
 .contacts__form .button {
   width: 100%;
+  cursor: pointer;
 }
 .contacts__input {
   position: relative;
@@ -2753,6 +2763,12 @@ body::after {
 }
 .contacts__input--tel:before {
   background-image: url("../img/call-calling.svg");
+}
+.contacts__input--monitor:before {
+  background-image: url("../img/monitor-mobbile.svg");
+}
+.contacts__input--chat:before {
+  background-image: url("../img/messages.svg");
 }
 
 @media (max-width: 992px) {
@@ -3438,4 +3454,47 @@ body::after {
   .prices__wrapper {
     grid-template-columns: 1fr;
   }
+}
+.form {
+  padding: 3.13rem 4.12rem;
+}
+.form__title {
+  margin-bottom: 24px;
+}
+@media (max-width: 1200px) {
+  .form__title {
+    margin-bottom: calc(12px + 12 * ((100vw - 360px) / 840));
+  }
+}
+.form__tel {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+@media (max-width: 1200px) {
+  .form__tel {
+    margin-top: calc(12px + 12 * ((100vw - 360px) / 840));
+  }
+}
+.form__tel span {
+  display: block;
+  text-align: center;
+  color: var(--Black, #000);
+  text-align: center;
+  font-family: "Kanit";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 1.2rem */
+}
+.form__tel a {
+  display: block;
+  text-align: center;
+  color: var(--Black, #000);
+  font-family: "Kanit";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
 }

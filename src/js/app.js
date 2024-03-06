@@ -9,3 +9,5 @@ const brands = document.querySelector('.brands');
 wmFunctions.burgerMenu();
 wmFunctions.tabs(brands);
 wmFunctions.readMore();
+wmFunctions.modal();
+
