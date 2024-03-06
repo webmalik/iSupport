@@ -1,24 +1,142 @@
 .secure {
-	&__wrapper {
-		display: flex;
-		background-image: url("../img/secure_bg.png");
-		background-repeat: no-repeat;
-	}
+  &__wrapper {
+    display: flex;
+    background-image: url("../img/secure_bg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 6.81rem;
+    padding-bottom: 3.5rem;
+  }
 
-	&__content {
-		max-width: 50%;
-	}
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
 
-	&__img {
-		max-width: 21.44575rem;
-	}
+    border-radius: 2.125rem;
+    border: 1px solid #f4f4f4;
+    background: rgba(206, 228, 252, 0.3);
+    backdrop-filter: blur(13px);
+    padding: 3rem 6.38rem 4.5rem;
+    width: 100%;
 
-	&__title {
-	}
+    &::after {
+      content: "";
+      display: block;
+      width: 5.9375rem;
+      height: 5.9375rem;
+      flex-shrink: 0;
+      border-radius: 8.34375rem;
+      background: var(
+        --Blue-Gradient,
+        linear-gradient(110deg, #a9cef4 14.61%, #ecb9e9 85.98%)
+      );
+      position: absolute;
+      right: 0;
+      bottom: -1rem;
+    }
+  }
 
-	&__text {
-	}
+  &__img {
+    position: absolute;
+    bottom: 3.5rem;
+    right: 5.39rem;
+    max-width: 30.1875rem;
+    margin-bottom: -3px;
+  }
 
-	&__button {
-	}
+  &__title {
+  }
+
+  &__text {
+    color: var(--Black, #000);
+    font-family: $font-family;
+    @include adaptiv-value("font-size", toPX(1.25), toPX(0.875), 1);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  &__button {
+    margin-top: 1.12rem;
+  }
+}
+
+@include media-width(1300px) {
+  .secure {
+    &__img {
+      max-width: 25rem;
+      right: 3rem;
+    }
+  }
+}
+@include media-width(1100px) {
+  .secure {
+    &__img {
+      max-width: 20rem;
+      right: 2rem;
+    }
+  }
+}
+
+@include media-width($md) {
+  .secure {
+    background-image: url("../img/secure-bg-2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 2.07rem;
+    padding-top: 1.37rem;
+    &__wrapper {
+      position: relative;
+      flex-direction: column;
+      background-image: none;
+      padding: 1.5rem 0;
+      gap: 0;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 2.125rem;
+        border: 1px solid #f4f4f4;
+        background-color: rgba(206, 228, 252, 0.3);
+        backdrop-filter: blur(13px);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+    &__content {
+      padding: 1.5rem 0.75rem;
+      background: none;
+      backdrop-filter: none;
+      border: none;
+      position: relative;
+      z-index: 5;
+      margin-bottom: -1rem;
+      gap: 0.75rem;
+
+      &::after {
+        width: 4.125rem;
+        height: 4.125rem;
+        flex-shrink: 0;
+        border-radius: 8.34375rem;
+        top: -2.75rem;
+        right: -1rem;
+      }
+    }
+    &__img {
+      position: relative;
+      right: auto;
+      max-width: 15.0625rem;
+      margin: auto;
+      bottom: -1.75rem;
+      z-index: 5;
+    }
+    &__button {
+      margin-top: 0;
+    }
+  }
 }
