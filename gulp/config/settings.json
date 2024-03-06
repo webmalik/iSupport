@@ -1,13 +1,17 @@
 {
-	"projectName": "iSupport",
-	"menuItems": [
-		{
-			"label": "Стартова сторінка",
-			"url": "/"
-		},
-		{
-			"label": "Головна сторінка",
-			"url": "/main.html"
-		}
-	]
+  "projectName": "iSupport",
+  "menuItems": [
+    {
+      "label": "Стартова сторінка",
+      "url": "/"
+    },
+    {
+      "label": "Головна сторінка",
+      "url": "/main.html"
+    },
+    {
+      "label": "Контакти",
+      "url": "/contacts.html"
+    }
+  ]
 }
